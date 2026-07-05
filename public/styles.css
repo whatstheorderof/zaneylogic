@@ -442,27 +442,89 @@ h3 {
   font-weight: 900;
 }
 
+.grid-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.grid-panel-head h2 {
+  margin-bottom: 0;
+}
+
+.grid-zoom {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  padding: 4px;
+  border: 1px solid rgba(45, 104, 104, 0.28);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.zoom-button,
+.zoom-fit {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fffdf7;
+  color: var(--teal-dark);
+  font-weight: 900;
+}
+
+.zoom-fit {
+  min-width: 46px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+}
+
+.zoom-button:hover,
+.zoom-fit:hover {
+  border-color: var(--teal);
+  background: #eef5ee;
+}
+
+.zoom-value {
+  min-width: 46px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-align: center;
+}
+
 .grid-wrap {
   overflow: auto;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
   background: #fffdf7;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .logic-grid {
-  width: 100%;
-  min-width: 900px;
+  --grid-zoom: 0.9;
+  width: calc(896px * var(--grid-zoom));
+  min-width: calc(320px * var(--grid-zoom));
   border-collapse: collapse;
   table-layout: fixed;
-  font-size: 0.82rem;
+  font-size: clamp(0.7rem, calc(0.82rem * var(--grid-zoom)), 1rem);
 }
 
 .logic-grid .suspect-col {
-  width: 128px;
+  width: clamp(64px, calc(128px * var(--grid-zoom)), 166px);
 }
 
 .logic-grid .mark-col {
-  width: 64px;
+  width: clamp(22px, calc(64px * var(--grid-zoom)), 82px);
 }
 
 .logic-grid th,
@@ -477,7 +539,7 @@ h3 {
 }
 
 .logic-grid .group-header th {
-  padding: 6px;
+  padding: clamp(4px, calc(6px * var(--grid-zoom)), 9px);
   background: var(--teal);
   color: #fffaf0;
   font-family: var(--mono);
@@ -487,8 +549,8 @@ h3 {
 
 .logic-grid .col-header {
   position: relative;
-  height: 168px;
-  padding: 8px 0;
+  height: clamp(126px, calc(168px * var(--grid-zoom)), 218px);
+  padding: clamp(5px, calc(8px * var(--grid-zoom)), 12px) 0;
   overflow: hidden;
   vertical-align: middle;
 }
@@ -499,7 +561,7 @@ h3 {
   justify-content: center;
   width: 100%;
   height: 100%;
-  max-height: 148px;
+  max-height: calc(clamp(126px, calc(168px * var(--grid-zoom)), 218px) - 18px);
   padding: 0;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -511,8 +573,8 @@ h3 {
 }
 
 .logic-grid .row-head {
-  width: 124px;
-  padding: 8px;
+  width: clamp(64px, calc(124px * var(--grid-zoom)), 166px);
+  padding: clamp(6px, calc(8px * var(--grid-zoom)), 12px);
   background: #fffaf0;
   text-align: left;
   line-height: 1.15;
@@ -525,12 +587,12 @@ h3 {
   display: grid;
   place-items: center;
   width: 100%;
-  min-width: 34px;
-  height: 34px;
+  min-width: 0;
+  height: clamp(26px, calc(38px * var(--grid-zoom)), 50px);
   border: 0;
   background: #fffdf7;
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: clamp(0.98rem, calc(1.18rem * var(--grid-zoom)), 1.45rem);
   font-weight: 900;
 }
 

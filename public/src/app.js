@@ -5,12 +5,17 @@ const menu = document.querySelector(".mobile-menu");
 const adTemplate = document.querySelector("#ad-slot-template");
 const solvedKey = "zaney-logic-solved";
 const rankKey = "zaney-logic-solved-count";
+const gridZoomKey = "zaney-logic-grid-zoom";
+const gridZoomMin = 35;
+const gridZoomMax = 130;
+const gridZoomStep = 10;
 
 const state = {
   puzzle: null,
   marks: {},
   activeTab: "evidence",
   hintIndex: 0,
+  gridZoom: clampNumber(Number(localStorage.getItem(gridZoomKey) || 90), gridZoomMin, gridZoomMax),
   final: {},
   result: null,
   toast: "",
@@ -230,9 +235,17 @@ function renderGrid(puzzle) {
   const groups = puzzle.categories.slice(1);
   return `
     <section class="panel">
-      <h2>Evidence Board</h2>
-      <div class="grid-wrap">
-        <table class="logic-grid" aria-label="Logic grid">
+      <div class="grid-panel-head">
+        <h2>Evidence Board</h2>
+        <div class="grid-zoom" aria-label="Board zoom controls">
+          <button class="zoom-button" type="button" data-action="grid-zoom" data-zoom="${state.gridZoom - gridZoomStep}" aria-label="Zoom evidence board out" title="Zoom out">-</button>
+          <span class="zoom-value">${state.gridZoom}%</span>
+          <button class="zoom-button" type="button" data-action="grid-zoom" data-zoom="${state.gridZoom + gridZoomStep}" aria-label="Zoom evidence board in" title="Zoom in">+</button>
+          <button class="zoom-fit" type="button" data-action="grid-zoom" data-zoom="35" aria-label="Fit the full evidence board" title="Fit full board">Fit</button>
+        </div>
+      </div>
+      <div class="grid-wrap" aria-label="Scrollable evidence board area">
+        <table class="logic-grid" aria-label="Logic grid" style="--grid-zoom: ${state.gridZoom / 100}">
           <colgroup>
             <col class="suspect-col" />
             ${groups.map((group) => group.items.map(() => `<col class="mark-col" />`).join("")).join("")}
@@ -483,6 +496,9 @@ function handleClick(event) {
   if (action === "check-grid") {
     checkGrid();
   }
+  if (action === "grid-zoom") {
+    setGridZoom(target.dataset.zoom);
+  }
   if (action === "validate-final") {
     validateFinal();
   }
@@ -534,6 +550,12 @@ function cycleCell(key) {
       if (sibling !== key && state.marks[sibling] !== "yes") state.marks[sibling] = "no";
     }
   }
+}
+
+function setGridZoom(value) {
+  state.gridZoom = clampNumber(Number(value), gridZoomMin, gridZoomMax);
+  localStorage.setItem(gridZoomKey, String(state.gridZoom));
+  renderGame((window.location.hash || "#daily") === "#daily");
 }
 
 function validateFinal() {
@@ -679,6 +701,11 @@ function markSymbol(value) {
 
 function titleCase(value) {
   return value.replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function clampNumber(value, min, max) {
+  if (!Number.isFinite(value)) return min;
+  return Math.max(min, Math.min(max, value));
 }
 
 function escapeHtml(value) {
