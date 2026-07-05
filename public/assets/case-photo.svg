@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Mystery evidence photograph</title>
+  <desc id="desc">A sketched detective evidence scene with a missing object outline, map pins, and case strings.</desc>
+  <rect width="640" height="420" fill="#ebe1cf"/>
+  <rect x="42" y="38" width="556" height="344" rx="8" fill="#fbf7ed" stroke="#1f3336" stroke-width="8"/>
+  <path d="M109 285c72-82 120-118 177-110 48 7 77 45 128 22 38-17 58-55 111-76" fill="none" stroke="#2d6868" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 18"/>
+  <path d="M187 122h140v152H187z" fill="#d8ccb9" stroke="#15282c" stroke-width="5"/>
+  <path d="M215 141h83M215 164h52M215 187h72" stroke="#8b1f26" stroke-width="6" stroke-linecap="round"/>
+  <path d="M411 107c23 0 42 19 42 42s-42 92-42 92-42-69-42-92 19-42 42-42z" fill="#d9ae49" stroke="#15282c" stroke-width="5"/>
+  <circle cx="411" cy="149" r="15" fill="#fbf7ed" stroke="#15282c" stroke-width="5"/>
+  <path d="M106 98l86 61M327 121l65 42M295 274l101-58M190 261l96 2" stroke="#8b1f26" stroke-width="4"/>
+  <circle cx="106" cy="98" r="13" fill="#2d6868"/>
+  <circle cx="327" cy="121" r="13" fill="#2d6868"/>
+  <circle cx="295" cy="274" r="13" fill="#2d6868"/>
+  <circle cx="190" cy="261" r="13" fill="#2d6868"/>
+  <path d="M491 266c-31-12-51-11-79 2 13-40 13-65 0-105 29 13 49 13 79 0-13 40-13 65 0 103z" fill="#fffaf0" stroke="#15282c" stroke-width="5"/>
+  <path d="M430 201h42M430 224h33" stroke="#15282c" stroke-width="5" stroke-linecap="round"/>
+</svg>

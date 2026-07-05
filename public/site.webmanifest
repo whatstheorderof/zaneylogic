@@ -1,0 +1,23 @@
+{
+  "name": "Zaney Logic",
+  "short_name": "Zaney Logic",
+  "description": "Daily logic grid mysteries with finishable detective cases.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f0e4",
+  "theme_color": "#f6f0e4",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

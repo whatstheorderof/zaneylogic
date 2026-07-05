@@ -8,6 +8,6 @@
     "validate:puzzles": "node scripts/validate-puzzles.mjs",
     "validate:packs": "node scripts/validate-puzzles.mjs --limit 5000 --all-packs",
     "test": "node scripts/validate-puzzles.mjs --limit 5000 --all-packs",
-    "build": "node scripts/validate-puzzles.mjs --limit 5000 --all-packs"
+    "build": "node scripts/validate-puzzles.mjs --limit 5000 --all-packs && node scripts/build-static.mjs"
   }
 }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Zaney Logic is a daily logic grid mystery game with finishable detective cases, shareable results, and a puzzle generator."
+    />
+    <meta property="og:title" content="Zaney Logic" />
+    <meta
+      property="og:description"
+      content="Solve a daily logic grid mystery. Compare detective ranks with friends."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f6f0e4" />
+    <title>Zaney Logic</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="styles.css?v=20260705-game-pass-5" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="icon-button" data-action="toggle-menu" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="./" aria-label="Zaney Logic daily case">
+          <img src="assets/icon.svg" alt="" />
+          <span>Zaney Logic</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary">
+          <a href="#daily">Daily</a>
+          <a href="#generator">Generator</a>
+          <a href="#packs">Packs</a>
+        </nav>
+        <button class="icon-button share-top" data-action="share" aria-label="Share case">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 13.5 16.5 18M16.5 6 7.5 10.5" />
+            <circle cx="18" cy="5.5" r="2.5" />
+            <circle cx="6" cy="12" r="2.5" />
+            <circle cx="18" cy="18.5" r="2.5" />
+          </svg>
+        </button>
+      </header>
+
+      <aside class="mobile-menu" hidden>
+        <a href="#daily">Daily mystery</a>
+        <a href="#generator">Generator</a>
+        <a href="#packs">Mystery packs</a>
+        <a href="#rank">Detective rank</a>
+      </aside>
+
+      <main id="app" aria-live="polite"></main>
+    </div>
+
+    <template id="ad-slot-template">
+      <section class="ad-slot" aria-label="Advertisement">
+        <span>Advertisement</span>
+        <strong>Google AdSense slot</strong>
+      </section>
+    </template>
+
+    <script type="module" src="src/app.js?v=20260705-game-pass-5"></script>
+  </body>
+</html>

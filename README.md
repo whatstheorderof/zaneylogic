@@ -41,7 +41,7 @@ This is a static app. Connect the Git repo to Vercel and keep the build command 
 npm run build
 ```
 
-The build command runs the 5,000-puzzle audit. No output directory is needed because Vercel can serve the static root files.
+The build command runs the 5,000-puzzle audit across every pack, then writes the deployable static site to `public/`. Set Vercel's Output Directory to `public`.
 
 ## Ads
 

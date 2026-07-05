@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Zaney Logic magnifier mark</title>
+  <rect width="64" height="64" rx="12" fill="#f6f0e4"/>
+  <path d="M18 18h17a11 11 0 0 1 0 22H18z" fill="#fffaf0" stroke="#163238" stroke-width="3"/>
+  <path d="M37 37l11 11" stroke="#8b1f26" stroke-width="5" stroke-linecap="round"/>
+  <path d="M23 25h13M23 31h9M23 37h12" stroke="#2d6868" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="37" cy="29" r="3" fill="#d9ae49"/>
+</svg>
